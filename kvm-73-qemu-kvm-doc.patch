@@ -1,6 +1,6 @@
-diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-doc.texi kvm-71/qemu/qemu-doc.texi
---- kvm-71.orig/qemu/qemu-doc.texi	2008-07-10 09:20:48.000000000 -0400
-+++ kvm-71/qemu/qemu-doc.texi	2008-07-15 12:17:20.000000000 -0400
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-73.orig/qemu/qemu-doc.texi kvm-73/qemu/qemu-doc.texi
+--- kvm-73.orig/qemu/qemu-doc.texi	2008-08-19 10:16:04.000000000 -0400
++++ kvm-73/qemu/qemu-doc.texi	2008-08-22 16:04:55.000000000 -0400
 @@ -1,7 +1,7 @@
 -\input texinfo @c -*- texinfo -*-
 +\input texinfo @c -*- texinfo -*-:
@@ -293,7 +293,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  mouse. Also overrides the PS/2 mouse emulation when activated.
  
  @item disk:file
-@@ -604,51 +604,51 @@ hostname reported by the builtin DHCP se
+@@ -607,51 +607,51 @@ hostname reported by the builtin DHCP se
  @item -net tap[,vlan=@var{n}][,fd=@var{h}][,ifname=@var{name}][,script=@var{file}]
  Connect the host TAP network interface @var{name} to VLAN @var{n} and
  use the network script @var{file} to configure it. The default
@@ -357,7 +357,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  correct multicast setup for these hosts).
  @item
  mcast support is compatible with User Mode Linux (argument @option{eth@var{N}=mcast}), see
-@@ -659,22 +659,22 @@ Use @option{fd=h} to specify an already 
+@@ -662,22 +662,22 @@ Use @option{fd=h} to specify an already 
  
  Example:
  @example
@@ -388,7 +388,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
                 -net socket,mcast=239.192.168.1:1102
  # launch UML
  /path/to/linux ubd0=/path/to/root_fs eth0=mcast
-@@ -699,7 +699,7 @@ a guest from a local directory.
+@@ -717,7 +717,7 @@ a guest from a local directory.
  
  Example (using pxelinux):
  @example
@@ -397,7 +397,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  @item -smb @var{dir}
-@@ -717,7 +717,7 @@ or @file{C:\WINNT\SYSTEM32\DRIVERS\ETC\L
+@@ -735,7 +735,7 @@ or @file{C:\WINNT\SYSTEM32\DRIVERS\ETC\L
  Then @file{@var{dir}} can be accessed in @file{\\smbserver\qemu}.
  
  Note that a SAMBA server must be installed on the host OS in
@@ -406,7 +406,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  2.2.7a from the Red Hat 9 and version 3.0.10-1.fc3 from Fedora Core 3.
  
  @item -redir [tcp|udp]:@var{host-port}:[@var{guest-host}]:@var{guest-port}
-@@ -733,7 +733,7 @@ screen 0, use the following:
+@@ -751,7 +751,7 @@ screen 0, use the following:
  
  @example
  # on the host
@@ -415,7 +415,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  # this host xterm should open in the guest X11 server
  xterm -display :1
  @end example
-@@ -743,7 +743,7 @@ the guest, use the following:
+@@ -761,7 +761,7 @@ the guest, use the following:
  
  @example
  # on the host
@@ -424,7 +424,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  telnet localhost 5555
  @end example
  
-@@ -820,19 +820,19 @@ they default to @code{0.0.0.0}.
+@@ -838,19 +838,19 @@ they default to @code{0.0.0.0}.
  When not using a specified @var{src_port} a random port is automatically chosen.
  
  If you just want a simple readonly console you can use @code{netcat} or
@@ -449,7 +449,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @table @code
  @item Qemu Options:
  -serial udp::4555@@:4556
-@@ -847,7 +847,7 @@ localhost 5555
+@@ -865,7 +865,7 @@ localhost 5555
  The TCP Net Console has two modes of operation.  It can send the serial
  I/O to a location or wait for a connection from a location.  By default
  the TCP Net Console is sent to @var{host} at the @var{port}.  If you use
@@ -458,7 +458,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  to connect to the port before continuing, unless the @code{nowait}
  option was specified.  The @code{nodelay} option disables the Nagle buffering
  algorithm.  If @var{host} is omitted, 0.0.0.0 is assumed. Only
-@@ -932,11 +932,11 @@ to specify a TCP port, or a host device 
+@@ -950,11 +950,11 @@ to specify a TCP port, or a host device 
  @item -S
  Do not start CPU at startup (you must type 'c' in the monitor).
  @item -d
@@ -472,7 +472,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  all those parameters. This option is useful for old MS-DOS disk
  images.
  
-@@ -958,7 +958,7 @@ only).
+@@ -976,7 +976,7 @@ only).
  Exit instead of rebooting.
  
  @item -no-shutdown
@@ -481,7 +481,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  This allows for instance switching to monitor to commit changes to the
  disk image.
  
-@@ -1040,7 +1040,7 @@ Send Ctrl-a
+@@ -1058,7 +1058,7 @@ Send Ctrl-a
  @ignore
  
  @c man begin SEEALSO
@@ -490,7 +490,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  user mode emulator invocation.
  @c man end
  
-@@ -1051,9 +1051,9 @@ Fabrice Bellard
+@@ -1069,9 +1069,9 @@ Fabrice Bellard
  @end ignore
  
  @node pcsys_monitor
@@ -502,7 +502,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  emulator. You can use it to:
  
  @itemize @minus
-@@ -1123,7 +1123,7 @@ Change the configuration of a device.
+@@ -1141,7 +1141,7 @@ Change the configuration of a device.
  Change the medium for a removable disk device to point to @var{filename}. eg
  
  @example
@@ -511,7 +511,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  @item change vnc @var{display},@var{options}
-@@ -1131,7 +1131,7 @@ Change the configuration of the VNC serv
+@@ -1149,7 +1149,7 @@ Change the configuration of the VNC serv
  and @var{options} are described at @ref{sec_invocation}. eg
  
  @example
@@ -520,7 +520,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  @item change vnc password
-@@ -1141,7 +1141,7 @@ the new password to be entered. VNC pass
+@@ -1159,7 +1159,7 @@ the new password to be entered. VNC pass
  eg.
  
  @example
@@ -529,7 +529,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  Password: ********
  @end example
  
-@@ -1182,7 +1182,7 @@ info capture
+@@ -1200,7 +1200,7 @@ info capture
  @end example
  
  @item log @var{item1}[,...]
@@ -538,7 +538,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  @item savevm [@var{tag}|@var{id}]
  Create a snapshot of the whole virtual machine. If @var{tag} is
-@@ -1235,7 +1235,7 @@ Examples:
+@@ -1253,7 +1253,7 @@ Examples:
  @item
  Dump 10 instructions at the current instruction pointer:
  @example
@@ -547,7 +547,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  0x90107063:  ret
  0x90107064:  sti
  0x90107065:  lea    0x0(%esi,1),%esi
-@@ -1251,7 +1251,7 @@ Dump 10 instructions at the current inst
+@@ -1269,7 +1269,7 @@ Dump 10 instructions at the current inst
  @item
  Dump 80 16 bit values at the start of the video memory.
  @smallexample
@@ -556,7 +556,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  0x000b8000: 0x0b50 0x0b6c 0x0b65 0x0b78 0x0b38 0x0b36 0x0b2f 0x0b42
  0x000b8010: 0x0b6f 0x0b63 0x0b68 0x0b73 0x0b20 0x0b56 0x0b47 0x0b41
  0x000b8020: 0x0b42 0x0b69 0x0b6f 0x0b73 0x0b20 0x0b63 0x0b75 0x0b72
-@@ -1300,7 +1300,7 @@ Add the USB device @var{devname}.  For d
+@@ -1318,7 +1318,7 @@ Add the USB device @var{devname}.  For d
  
  @item usb_del @var{devname}
  
@@ -565,7 +565,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  hub. @var{devname} has the syntax @code{bus.addr}. Use the monitor
  command @code{info usb} to see the devices you can remove.
  
-@@ -1315,7 +1315,7 @@ CPU registers by prefixing them with @em
+@@ -1333,7 +1333,7 @@ CPU registers by prefixing them with @em
  @node disk_images
  @section Disk Images
  
@@ -574,7 +574,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  growable disk images (their size increase as non empty sectors are
  written), compressed and encrypted disk images. Version 0.8.3 added
  the new qcow2 disk image format which is essential to support VM
-@@ -1325,8 +1325,8 @@ snapshots.
+@@ -1343,8 +1343,8 @@ snapshots.
  * disk_images_quickstart::    Quick start for disk image creation
  * disk_images_snapshot_mode:: Snapshot mode
  * vm_snapshots::              VM snapshots
@@ -585,7 +585,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  * host_drives::               Using host drives
  * disk_images_fat_images::    Virtual FAT disk images
  * disk_images_nbd::           NBD access
-@@ -1337,7 +1337,7 @@ snapshots.
+@@ -1355,7 +1355,7 @@ snapshots.
  
  You can create a disk image with the command:
  @example
@@ -594,7 +594,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  where @var{myimage.img} is the disk image filename and @var{mysize} is its
  size in kilobytes. You can add an @code{M} suffix to give the size in
-@@ -1372,7 +1372,7 @@ a VM snapshot. @code{info snapshots} lis
+@@ -1390,7 +1390,7 @@ a VM snapshot. @code{info snapshots} lis
  with their associated information:
  
  @example
@@ -603,7 +603,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  Snapshot devices: hda
  Snapshot list (from hda):
  ID        TAG                 VM SIZE                DATE       VM CLOCK
-@@ -1393,7 +1393,7 @@ disk images).
+@@ -1411,7 +1411,7 @@ disk images).
  
  When using the (unrelated) @code{-snapshot} option
  (@ref{disk_images_snapshot_mode}), you can always make VM snapshots,
@@ -612,7 +612,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  VM snapshots currently have the following known limitations:
  @itemize
-@@ -1406,20 +1406,20 @@ state is not saved or restored properly 
+@@ -1424,20 +1424,20 @@ state is not saved or restored properly 
  @end itemize
  
  @node qemu_img_invocation
@@ -637,7 +637,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  @subsubsection Linux
  
-@@ -1430,7 +1430,7 @@ it. For example, use @file{/dev/cdrom} t
+@@ -1448,7 +1448,7 @@ it. For example, use @file{/dev/cdrom} t
  
  @table @code
  @item CD
@@ -646,7 +646,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  specific code to detect CDROM insertion or removal. CDROM ejection by
  the guest OS is supported. Currently only data CDs are supported.
  @item Floppy
-@@ -1480,11 +1480,11 @@ change or eject media.
+@@ -1498,11 +1498,11 @@ change or eject media.
  @node disk_images_fat_images
  @subsection Virtual FAT disk images
  
@@ -660,7 +660,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  Then you access access to all the files in the @file{/my_directory}
-@@ -1494,14 +1494,14 @@ them via SAMBA or NFS. The default acces
+@@ -1512,14 +1512,14 @@ them via SAMBA or NFS. The default acces
  Floppies can be emulated with the @code{:floppy:} option:
  
  @example
@@ -677,7 +677,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  What you should @emph{never} do:
-@@ -1515,67 +1515,67 @@ What you should @emph{never} do:
+@@ -1533,67 +1533,67 @@ What you should @emph{never} do:
  @node disk_images_nbd
  @subsection NBD access
  
@@ -762,7 +762,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  that your host kernel supports the TAP network interfaces: the
  device @file{/dev/net/tun} must be present.
  
-@@ -1585,20 +1585,20 @@ TAP network interfaces.
+@@ -1603,20 +1603,20 @@ TAP network interfaces.
  @subsubsection Windows host
  
  There is a virtual ethernet driver for Windows 2000/XP systems, called
@@ -786,7 +786,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
                             |          (10.0.2.2)
                             |
                             ---->  DNS server (10.0.2.3)
-@@ -1606,14 +1606,14 @@ network). The virtual network configurat
+@@ -1624,14 +1624,14 @@ network). The virtual network configurat
                             ---->  SMB server (10.0.2.4)
  @end example
  
@@ -804,7 +804,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  Note that @code{ping} is not supported reliably to the internet as it
  would require root privileges. It means you can only ping the local
-@@ -1626,22 +1626,22 @@ When using the @option{-redir} option, T
+@@ -1644,22 +1644,22 @@ When using the @option{-redir} option, T
  redirected from the host to the guest. It allows for example to
  redirect X11, telnet or SSH connections.
  
@@ -831,7 +831,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  Use @option{-kernel} to provide the Linux kernel image and
-@@ -1653,10 +1653,10 @@ When using the direct Linux boot, a disk
+@@ -1671,10 +1671,10 @@ When using the direct Linux boot, a disk
  Linux kernel.
  
  If you do not need graphical output, you can disable it and redirect
@@ -844,7 +844,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
       -append "root=/dev/hda console=ttyS0" -nographic
  @end example
  
-@@ -1666,7 +1666,7 @@ monitor (@pxref{pcsys_keys}).
+@@ -1684,7 +1684,7 @@ monitor (@pxref{pcsys_keys}).
  @node pcsys_usb
  @section USB emulation
  
@@ -853,7 +853,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  virtual USB devices or real host USB devices (experimental, works only
  on Linux hosts).  Qemu will automatically create and connect virtual USB hubs
  as necessary to connect multiple USB devices.
-@@ -1686,7 +1686,7 @@ or the @code{usb_add} monitor command.  
+@@ -1704,7 +1704,7 @@ or the @code{usb_add} monitor command.  
  Virtual Mouse.  This will override the PS/2 mouse emulation when activated.
  @item tablet
  Pointer device that uses absolute coordinates (like a touchscreen).
@@ -862,7 +862,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  to grab the mouse.  Also overrides the PS/2 mouse emulation when activated.
  @item disk:@var{file}
  Mass storage device based on @var{file} (@pxref{disk_images})
-@@ -1720,7 +1720,7 @@ or fake device.
+@@ -1746,7 +1746,7 @@ Currently this cannot be used in machine
  @node host_usb_devices
  @subsection Using host USB devices on a Linux host
  
@@ -871,7 +871,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  using it. USB devices requiring real time streaming (i.e. USB Video
  Cameras) are not supported yet.
  
-@@ -1736,12 +1736,12 @@ ls /proc/bus/usb
+@@ -1762,12 +1762,12 @@ ls /proc/bus/usb
  001  devices  drivers
  @end example
  
@@ -886,7 +886,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @example
  info usbhost
    Device 1.2, speed 480 Mb/s
-@@ -1750,7 +1750,7 @@ info usbhost
+@@ -1776,7 +1776,7 @@ info usbhost
  You should see the list of the devices you can use (Never try to use
  hubs, it won't work).
  
@@ -895,7 +895,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @example
  usb_add host:1234:5678
  @end example
-@@ -1758,11 +1758,11 @@ usb_add host:1234:5678
+@@ -1784,11 +1784,11 @@ usb_add host:1234:5678
  Normally the guest OS should report that a new USB device is
  plugged. You can use the option @option{-usbdevice} to do the same.
  
@@ -909,7 +909,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  device to make it work again (this is a bug).
  
  @node vnc_security
-@@ -1788,7 +1788,7 @@ For this setup it is recommended to rest
+@@ -1814,7 +1814,7 @@ For this setup it is recommended to rest
  socket only. For example
  
  @example
@@ -918,7 +918,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  This ensures that only users on local box with read/write access to that
-@@ -1805,20 +1805,20 @@ to provide high security. The password c
+@@ -1831,20 +1831,20 @@ to provide high security. The password c
  a client making repeat connections. For this reason, a VNC server using password
  authentication should be restricted to only listen on the loopback interface
  or UNIX domain sockets. Password ayuthentication is requested with the @code{password}
@@ -944,7 +944,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  TLS for encryption of the session, and x509 certificates for authentication.
  The use of x509 certificates is strongly recommended, because TLS on its
  own is susceptible to man-in-the-middle attacks. Basic x509 certificate
-@@ -1826,12 +1826,12 @@ support provides a secure session, but n
+@@ -1852,12 +1852,12 @@ support provides a secure session, but n
  client to connect, and provides an encrypted session.
  
  @example
@@ -960,7 +960,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  NB the @code{server-key.pem} file should be protected with file mode 0600 to
  only be readable by the user owning it.
  
-@@ -1844,7 +1844,7 @@ then validate against the CA certificate
+@@ -1870,7 +1870,7 @@ then validate against the CA certificate
  in an environment with a private internal certificate authority.
  
  @example
@@ -969,7 +969,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  
-@@ -1855,10 +1855,10 @@ Finally, the previous method can be comb
+@@ -1881,10 +1881,10 @@ Finally, the previous method can be comb
  to provide two layers of authentication for clients.
  
  @example
@@ -983,7 +983,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  @node vnc_generate_cert
-@@ -1869,8 +1869,8 @@ be used to generate certificates and key
+@@ -1895,8 +1895,8 @@ be used to generate certificates and key
  is neccessary to setup a certificate authority, and issue certificates to
  each server. If using certificates for authentication, then each client
  will also need to be issued a certificate. The recommendation is for the
@@ -994,7 +994,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  @menu
  * vnc_generate_ca::
-@@ -1943,7 +1943,7 @@ sensitive and should be kept protected w
+@@ -1969,7 +1969,7 @@ sensitive and should be kept protected w
  @node vnc_generate_client
  @subsubsection Issuing client certificates
  
@@ -1003,7 +1003,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  certificates as its authentication mechanism, each client also needs to be issued
  a certificate. The client certificate contains enough metadata to uniquely identify
  the client, typically organization, state, city, building, etc. On the host holding
-@@ -1975,13 +1975,13 @@ copied to the client for which they were
+@@ -2001,13 +2001,13 @@ copied to the client for which they were
  @node gdb_usage
  @section GDB usage
  
@@ -1020,7 +1020,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
         -append "root=/dev/hda"
  Connected to host network interface: tun0
  Waiting gdb connection on port 1234
-@@ -1992,7 +1992,7 @@ Then launch gdb on the 'vmlinux' executa
+@@ -2018,7 +2018,7 @@ Then launch gdb on the 'vmlinux' executa
  > gdb vmlinux
  @end example
  
@@ -1029,7 +1029,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @example
  (gdb) target remote localhost:1234
  @end example
-@@ -2055,11 +2055,11 @@ color depth in the guest and the host OS
+@@ -2081,11 +2081,11 @@ color depth in the guest and the host OS
  
  When using a 2.6 guest Linux kernel, you should add the option
  @code{clock=pit} on the kernel command line because the 2.6 Linux
@@ -1043,7 +1043,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  Accelerator Module is also much slower in this case. Earlier Fedora
  Core 3 Linux kernel (< 2.6.9-1.724_FC3) were known to incorporate this
  patch by default. Newer kernels don't have it.
-@@ -2071,7 +2071,7 @@ best speed. Windows 2000 is also a good 
+@@ -2097,7 +2097,7 @@ best speed. Windows 2000 is also a good 
  
  @subsubsection SVGA graphic modes support
  
@@ -1052,7 +1052,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  card. All Windows versions starting from Windows 95 should recognize
  and use this graphic card. For optimal performances, use 16 bit color
  depth in the guest and the host OS.
-@@ -2092,14 +2092,14 @@ problem. Note that no such tool is neede
+@@ -2118,14 +2118,14 @@ problem. Note that no such tool is neede
  @subsubsection Windows 2000 disk full problem
  
  Windows 2000 has a bug which gives a disk full problem during its
@@ -1069,7 +1069,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  can. It comes from the fact that Windows 2000 does not automatically
  use the APM driver provided by the BIOS.
  
-@@ -2108,7 +2108,7 @@ Bartlett): go to the Control Panel => Ad
+@@ -2134,7 +2134,7 @@ Bartlett): go to the Control Panel => Ad
  Add/Troubleshoot a device => Add a new device & Next => No, select the
  hardware from a list & Next => NT Apm/Legacy Support & Next => Next
  (again) a few times. Now the driver is installed and Windows 2000 now
@@ -1078,7 +1078,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  @subsubsection Share a directory between Unix and Windows
  
-@@ -2138,15 +2138,15 @@ it takes host CPU cycles even when idle.
+@@ -2164,15 +2164,15 @@ it takes host CPU cycles even when idle.
  from @url{http://www.vmware.com/software/dosidle210.zip} to solve this
  problem.
  
@@ -1098,7 +1098,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  * Sparc32 System emulator::
  * Sparc64 System emulator::
  * MIPS System emulator::
-@@ -2154,13 +2154,13 @@ differences are mentioned in the followi
+@@ -2180,13 +2180,13 @@ differences are mentioned in the followi
  * ColdFire System emulator::
  @end menu
  
@@ -1115,7 +1115,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  @itemize @minus
  @item
-@@ -2177,7 +2177,7 @@ Non Volatile RAM
+@@ -2203,7 +2203,7 @@ Non Volatile RAM
  VIA-CUDA with ADB keyboard and mouse.
  @end itemize
  
@@ -1124,7 +1124,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  @itemize @minus
  @item
-@@ -2198,7 +2198,7 @@ PREP Non Volatile RAM
+@@ -2224,7 +2224,7 @@ PREP Non Volatile RAM
  PC compatible keyboard and mouse.
  @end itemize
  
@@ -1133,7 +1133,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @url{http://perso.magic.fr/l_indien/OpenHackWare/index.htm}.
  
  @c man begin OPTIONS
-@@ -2229,7 +2229,7 @@ or SPARCcenter 2000 (sun4d architecture)
+@@ -2255,7 +2255,7 @@ or SPARCcenter 2000 (sun4d architecture)
  complete.  SMP up to 16 CPUs is supported, but Linux limits the number
  of usable CPUs to 4.
  
@@ -1142,7 +1142,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  @itemize @minus
  @item
-@@ -2255,13 +2255,13 @@ The number of peripherals is fixed in th
+@@ -2281,13 +2281,13 @@ The number of peripherals is fixed in th
  memory size depends on the machine type, for SS-5 it is 256MB and for
  others 2047MB.
  
@@ -1158,16 +1158,16 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  Solaris kernels don't work.
  
  @c man begin OPTIONS
-@@ -2298,7 +2298,7 @@ Set the emulated machine type. Default i
- Use the executable @file{qemu-system-sparc64} to simulate a Sun4u machine.
- The emulator is not usable for anything yet.
+@@ -2324,7 +2324,7 @@ Set the emulated machine type. Default i
+ Use the executable @file{qemu-system-sparc64} to simulate a Sun4u or
+ Sun4v machine. The emulator is not usable for anything yet.
  
--QEMU emulates the following sun4u peripherals:
-+KVM emulates the following sun4u peripherals:
+-QEMU emulates the following peripherals:
++KVM emulates the following peripherals:
  
  @itemize @minus
  @item
-@@ -2616,8 +2616,8 @@ MV88W8618 audio controller, WM8750 CODEC
+@@ -2658,8 +2658,8 @@ MV88W8618 audio controller, WM8750 CODEC
  2 buttons, 2 navigation wheels with button function
  @end itemize
  
@@ -1178,7 +1178,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  @node ColdFire System emulator
  @section ColdFire System emulator
-@@ -2645,8 +2645,8 @@ MCF5206 ColdFire V2 Microprocessor.
+@@ -2687,8 +2687,8 @@ MCF5206 ColdFire V2 Microprocessor.
  Two on-chip UARTs.
  @end itemize
  
@@ -1189,7 +1189,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  @menu
  * Supported Operating Systems ::
-@@ -2661,9 +2661,9 @@ The following OS are supported in user s
+@@ -2703,9 +2703,9 @@ The following OS are supported in user s
  
  @itemize @minus
  @item
@@ -1201,7 +1201,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end itemize
  
  @node Linux User space emulator
-@@ -2679,7 +2679,7 @@ Mac OS X/Darwin (referred as qemu-darwin
+@@ -2721,7 +2721,7 @@ Mac OS X/Darwin (referred as qemu-darwin
  @node Quick Start
  @subsection Quick Start
  
@@ -1210,7 +1210,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  itself and all the target (x86) dynamic libraries used by it.
  
  @itemize
-@@ -2688,21 +2688,21 @@ itself and all the target (x86) dynamic 
+@@ -2730,21 +2730,21 @@ itself and all the target (x86) dynamic 
  libraries:
  
  @example
@@ -1237,7 +1237,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @code{LD_LIBRARY_PATH} is not set:
  
  @example
-@@ -2712,16 +2712,16 @@ unset LD_LIBRARY_PATH
+@@ -2754,16 +2754,16 @@ unset LD_LIBRARY_PATH
  Then you can launch the precompiled @file{ls} x86 executable:
  
  @example
@@ -1258,7 +1258,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
            /usr/local/qemu-i386/bin/ls-i386
  @end example
  
-@@ -2732,16 +2732,16 @@ qemu-i386 /usr/local/qemu-i386/bin/qemu-
+@@ -2774,16 +2774,16 @@ qemu-i386 /usr/local/qemu-i386/bin/qemu-
  
  @itemize
  
@@ -1278,7 +1278,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  
  @item Configure Wine on your account. Look at the provided script
  @file{/usr/local/qemu-i386/@/bin/wine-conf.sh}. Your previous
-@@ -2750,7 +2750,7 @@ qemu-i386 /usr/local/qemu-i386/bin/ls-i3
+@@ -2792,7 +2792,7 @@ qemu-i386 /usr/local/qemu-i386/bin/ls-i3
  @item Then you can try the example @file{putty.exe}:
  
  @example
@@ -1287,7 +1287,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
            /usr/local/qemu-i386/wine/c/Program\ Files/putty.exe
  @end example
  
-@@ -2760,7 +2760,7 @@ qemu-i386 /usr/local/qemu-i386/wine/bin/
+@@ -2802,7 +2802,7 @@ qemu-i386 /usr/local/qemu-i386/wine/bin/
  @subsection Command line options
  
  @example
@@ -1296,7 +1296,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  @table @option
-@@ -2776,7 +2776,7 @@ Debug options:
+@@ -2818,7 +2818,7 @@ Debug options:
  
  @table @option
  @item -d
@@ -1305,7 +1305,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @item -p pagesize
  Act as if the host page size was 'pagesize' bytes
  @end table
-@@ -2784,7 +2784,7 @@ Act as if the host page size was 'pagesi
+@@ -2826,7 +2826,7 @@ Act as if the host page size was 'pagesi
  Environment variables:
  
  @table @env
@@ -1314,7 +1314,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  Print system calls and arguments similar to the 'strace' program
  (NOTE: the actual 'strace' program will not work because the user
  space emulator hasn't implemented ptrace).  At the moment this is
-@@ -2835,12 +2835,12 @@ target PowerPC on PowerPC: Most apps (Co
+@@ -2877,12 +2877,12 @@ target PowerPC on PowerPC: Most apps (Co
  target x86 on PowerPC: most utilities work. Cocoa and Carbon apps are not yet supported.
  @end itemize
  
@@ -1329,7 +1329,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  itself and all the target dynamic libraries used by it. If you don't have the FAT
  libraries (you're running Mac OS X/ppc) you'll need to obtain it from a Mac OS X
  CD or compile them by hand.
-@@ -2851,7 +2851,7 @@ CD or compile them by hand.
+@@ -2893,7 +2893,7 @@ CD or compile them by hand.
  libraries:
  
  @example
@@ -1338,7 +1338,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  or to run the ppc version of the executable:
-@@ -2864,7 +2864,7 @@ qemu-ppc /bin/ls
+@@ -2906,7 +2906,7 @@ qemu-ppc /bin/ls
  are installed:
  
  @example
@@ -1347,7 +1347,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  @code{-L /opt/x86_root/} tells that the dynamic linker (dyld) path is in
-@@ -2876,7 +2876,7 @@ qemu-i386 -L /opt/x86_root/ /bin/ls
+@@ -2918,7 +2918,7 @@ qemu-i386 -L /opt/x86_root/ /bin/ls
  @subsection Command line options
  
  @example
@@ -1356,7 +1356,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @end example
  
  @table @option
-@@ -2892,7 +2892,7 @@ Debug options:
+@@ -2934,7 +2934,7 @@ Debug options:
  
  @table @option
  @item -d
@@ -1365,7 +1365,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @item -p pagesize
  Act as if the host page size was 'pagesize' bytes
  @end table
-@@ -2915,11 +2915,11 @@ Act as if the host page size was 'pagesi
+@@ -2957,11 +2957,11 @@ Act as if the host page size was 'pagesi
  First you must decompress the sources:
  @example
  cd /tmp
@@ -1380,7 +1380,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @example
  ./configure
  make
-@@ -2929,16 +2929,16 @@ Then type as root user:
+@@ -2971,16 +2971,16 @@ Then type as root user:
  @example
  make install
  @end example
@@ -1400,7 +1400,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  these older versions so that usually you don't have to do anything.
  
  @node Windows
-@@ -2957,15 +2957,15 @@ unpack the archive @file{i386-mingw32msv
+@@ -2999,15 +2999,15 @@ unpack the archive @file{i386-mingw32msv
  directory. Edit the @file{sdl-config} script so that it gives the
  correct SDL directory when invoked.
  
@@ -1419,7 +1419,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @file{make install}. Don't forget to copy @file{SDL.dll} in
  @file{Program Files/Qemu}.
  
-@@ -2983,10 +2983,10 @@ Install the MinGW cross compilation tool
+@@ -3025,10 +3025,10 @@ Install the MinGW cross compilation tool
  Install the Win32 version of SDL (@url{http://www.libsdl.org}) by
  unpacking @file{i386-mingw32msvc.tar.gz}. Set up the PATH environment
  variable so that @file{i386-mingw32msvc-sdl-config} can be launched by
@@ -1432,7 +1432,7 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  @example
  ./configure --enable-mingw32
  @end example
-@@ -2994,20 +2994,20 @@ If necessary, you can change the cross-p
+@@ -3036,20 +3036,20 @@ If necessary, you can change the cross-p
  chosen for the MinGW tools with --cross-prefix. You can also use
  --prefix to set the Win32 install path.
  
@@ -1457,9 +1457,9 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-do
  information.
  
  @node Index
-diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-img.texi kvm-71/qemu/qemu-img.texi
---- kvm-71.orig/qemu/qemu-img.texi	2008-07-10 09:20:48.000000000 -0400
-+++ kvm-71/qemu/qemu-img.texi	2008-07-15 12:18:00.000000000 -0400
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-73.orig/qemu/qemu-img.texi kvm-73/qemu/qemu-img.texi
+--- kvm-73.orig/qemu/qemu-img.texi	2008-08-19 10:16:04.000000000 -0400
++++ kvm-73/qemu/qemu-img.texi	2008-08-22 16:04:05.000000000 -0400
 @@ -1,6 +1,6 @@
  @example
  @c man begin SYNOPSIS
@@ -1490,9 +1490,9 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-im
  user mode emulator invocation.
  @c man end
  
-diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-71.orig/qemu/qemu-nbd.texi kvm-71/qemu/qemu-nbd.texi
---- kvm-71.orig/qemu/qemu-nbd.texi	2008-07-10 09:20:48.000000000 -0400
-+++ kvm-71/qemu/qemu-nbd.texi	2008-07-15 12:18:19.000000000 -0400
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-73.orig/qemu/qemu-nbd.texi kvm-73/qemu/qemu-nbd.texi
+--- kvm-73.orig/qemu/qemu-nbd.texi	2008-08-19 10:16:04.000000000 -0400
++++ kvm-73/qemu/qemu-nbd.texi	2008-08-22 16:04:05.000000000 -0400
 @@ -1,6 +1,6 @@
  @example
  @c man begin SYNOPSIS
