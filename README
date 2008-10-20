@@ -1,2 +1,12 @@
 These are patches for the Gentoo KVM package.  They're too big to fit in
 FILESDIR anymore, so this repo tracks them for a tarball on mirrors.
+
+They are in the required format to bulk applied by epatch:
+
+<num>_<arch>_<name>.patch
+
+where
+
+<num> is the order number (01-99)
+<arch> is the gentoo arch to apply it to (all for every arch)
+<name> is the name of the patch
