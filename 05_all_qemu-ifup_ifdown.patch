@@ -1,6 +1,6 @@
-diff -Naur kvm-69.orig/scripts/qemu-ifdown kvm-69/scripts/qemu-ifdown
---- kvm-69.orig/scripts/qemu-ifdown	1970-01-01 01:00:00.000000000 +0100
-+++ kvm-69/scripts/qemu-ifdown	2008-06-03 09:46:53.000000000 +0200
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-79.orig/scripts/qemu-ifdown kvm-79/scripts/qemu-ifdown
+--- kvm-79.orig/scripts/qemu-ifdown	1969-12-31 19:00:00.000000000 -0500
++++ kvm-79/scripts/qemu-ifdown	2008-12-10 11:04:22.000000000 -0500
 @@ -0,0 +1,20 @@
 +#!/bin/sh
 +
@@ -14,18 +14,18 @@ diff -Naur kvm-69.orig/scripts/qemu-ifdown kvm-69/scripts/qemu-ifdown
 +fi
 +
 +if [ -x /sbin/ip ]; then
-+  switch=$(/sbin/ip route list | awk '/^default / { sub(/.* dev /, ""); print $1 }')
++  switch=( $(/sbin/ip route list | awk '/^default / { sub(/.* dev /, ""); print $1 }') )
 +  ${BRCTL} delif ${switch} $1
 +  /sbin/ip link set $1 down
 +else
-+  switch=$(/bin/netstat -rn | awk '/^0\.0\.0\.0/ { print $NF }')
++  switch=( $(/bin/netstat -rn | awk '/^0\.0\.0\.0/ { print $NF }') )
 +  ${BRCTL} delif ${switch} $1
 +  /sbin/ifconfig $1 down
 +fi
-diff -Naur kvm-69.orig/scripts/qemu-ifup kvm-69/scripts/qemu-ifup
---- kvm-69.orig/scripts/qemu-ifup	2008-06-03 09:42:05.000000000 +0200
-+++ kvm-69/scripts/qemu-ifup	2008-06-03 09:44:30.000000000 +0200
-@@ -1,5 +1,21 @@
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-79.orig/scripts/qemu-ifup kvm-79/scripts/qemu-ifup
+--- kvm-79.orig/scripts/qemu-ifup	2008-11-12 06:48:01.000000000 -0500
++++ kvm-79/scripts/qemu-ifup	2008-12-10 11:04:16.000000000 -0500
+@@ -1,5 +1,22 @@
  #!/bin/sh
  
 -switch=$(/sbin/ip route list | awk '/^default / { print $NF }')
@@ -41,12 +41,13 @@ diff -Naur kvm-69.orig/scripts/qemu-ifup kvm-69/scripts/qemu-ifup
 +fi
 +
 +if [ -x /sbin/ip ]; then
-+  switch=$(/sbin/ip route list | awk '/^default / { sub(/.* dev /, ""); print $1 }')
++  switch=( $(/sbin/ip route list | awk '/^default / { sub(/.* dev /, ""); print $1 }') )
 +  /sbin/ip link set $1 up
 +else
-+  switch=$(/bin/netstat -rn | awk '/^0\.0\.0\.0/ { print $NF }')
++  switch=( $(/bin/netstat -rn | awk '/^0\.0\.0\.0/ { print $NF }') )
 +  /sbin/ifconfig $1 0.0.0.0 up
 +fi
 +
++[[ ${switch#} -ne "1" ]] && logger -t kvm "$0 found more than one bridge connecting $1 to ${switch}"
 +${BRCTL} addif ${switch} $1
 +
