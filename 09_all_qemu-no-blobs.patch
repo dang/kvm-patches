@@ -1,18 +1,18 @@
-diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-77.orig/qemu/Makefile kvm-77/qemu/Makefile
---- kvm-77.orig/qemu/Makefile	2008-10-12 07:50:11.000000000 -0400
-+++ kvm-77/qemu/Makefile	2008-10-20 14:51:02.000000000 -0400
-@@ -237,8 +237,8 @@ ifneq ($(TOOLS),)
- 	$(INSTALL) -m 755 -s $(TOOLS) "$(DESTDIR)$(bindir)"
- endif
- 	mkdir -p "$(DESTDIR)$(datadir)"
--	set -e; for x in bios.bin vgabios.bin vgabios-cirrus.bin ppc_rom.bin \
--		video.x openbios-sparc32 openbios-sparc64 pxe-ne2k_pci.bin \
-+	set -e; for x in bios.bin vgabios.bin vgabios-cirrus.bin \
-+		pxe-ne2k_pci.bin \
- 		pxe-rtl8139.bin pxe-pcnet.bin pxe-e1000.bin extboot.bin \
- 		bamboo.dtb; \
-         do \
-@@ -347,10 +347,6 @@ tarbin:
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-81.orig/qemu/Makefile kvm-81/qemu/Makefile
+--- kvm-81.orig/qemu/Makefile	2008-12-14 08:16:27.000000000 -0500
++++ kvm-81/qemu/Makefile	2008-12-16 10:09:20.000000000 -0500
+@@ -226,8 +226,8 @@ ar      de     en-us  fi  fr-be  hr     
+ common  de-ch  es     fo  fr-ca  hu     ja  mk  nl-be      pt  sl     tr
+ 
+ ifdef INSTALL_BLOBS
+-BLOBS=bios.bin vgabios.bin vgabios-cirrus.bin ppc_rom.bin \
+-video.x openbios-sparc32 openbios-sparc64 pxe-ne2k_pci.bin \
++BLOBS=bios.bin vgabios.bin vgabios-cirrus.bin \
++pxe-ne2k_pci.bin \
+ pxe-rtl8139.bin pxe-pcnet.bin pxe-e1000.bin
+ BLOBS += extboot.bin
+ BLOBS += bamboo.dtb
+@@ -359,10 +359,6 @@ tarbin:
  	$(datadir)/bios.bin \
  	$(datadir)/vgabios.bin \
  	$(datadir)/vgabios-cirrus.bin \
@@ -23,9 +23,9 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-77.orig/qemu/Makefil
          $(datadir)/pxe-ne2k_pci.bin \
  	$(datadir)/pxe-rtl8139.bin \
          $(datadir)/pxe-pcnet.bin \
-diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-77.orig/qemu/pc-bios/README.gentoo kvm-77/qemu/pc-bios/README.gentoo
---- kvm-77.orig/qemu/pc-bios/README.gentoo	1969-12-31 19:00:00.000000000 -0500
-+++ kvm-77/qemu/pc-bios/README.gentoo	2008-10-20 14:55:29.000000000 -0400
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-81.orig/qemu/pc-bios/README.gentoo kvm-81/qemu/pc-bios/README.gentoo
+--- kvm-81.orig/qemu/pc-bios/README.gentoo	1969-12-31 19:00:00.000000000 -0500
++++ kvm-81/qemu/pc-bios/README.gentoo	2008-12-16 10:08:19.000000000 -0500
 @@ -0,0 +1,19 @@
 +- The PC BIOS comes from the Bochs project (http://bochs.sourceforge.net/)
 +  The bios.bin binary is provided for convenience.  If you want to rebuild
