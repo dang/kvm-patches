@@ -1,18 +1,20 @@
-diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-81.orig/qemu/Makefile kvm-81/qemu/Makefile
---- kvm-81.orig/qemu/Makefile	2008-12-14 08:16:27.000000000 -0500
-+++ kvm-81/qemu/Makefile	2008-12-16 10:09:20.000000000 -0500
-@@ -226,8 +226,8 @@ ar      de     en-us  fi  fr-be  hr     
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-82.orig/qemu/Makefile kvm-82/qemu/Makefile
+--- kvm-82.orig/qemu/Makefile	2008-12-24 09:24:58.000000000 -0500
++++ kvm-82/qemu/Makefile	2009-01-04 20:17:43.000000000 -0500
+@@ -224,9 +224,9 @@ ar      de     en-us  fi  fr-be  hr     
  common  de-ch  es     fo  fr-ca  hu     ja  mk  nl-be      pt  sl     tr
  
  ifdef INSTALL_BLOBS
 -BLOBS=bios.bin vgabios.bin vgabios-cirrus.bin ppc_rom.bin \
 -video.x openbios-sparc32 openbios-sparc64 pxe-ne2k_pci.bin \
+-pxe-rtl8139.bin pxe-pcnet.bin pxe-e1000.bin bamboo.dtb
 +BLOBS=bios.bin vgabios.bin vgabios-cirrus.bin \
 +pxe-ne2k_pci.bin \
- pxe-rtl8139.bin pxe-pcnet.bin pxe-e1000.bin
++pxe-rtl8139.bin pxe-pcnet.bin pxe-e1000.bin
  BLOBS += extboot.bin
- BLOBS += bamboo.dtb
-@@ -359,10 +359,6 @@ tarbin:
+ else
+ BLOBS=
+@@ -356,10 +356,6 @@ tarbin:
  	$(datadir)/bios.bin \
  	$(datadir)/vgabios.bin \
  	$(datadir)/vgabios-cirrus.bin \
@@ -23,9 +25,9 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-81.orig/qemu/Makefil
          $(datadir)/pxe-ne2k_pci.bin \
  	$(datadir)/pxe-rtl8139.bin \
          $(datadir)/pxe-pcnet.bin \
-diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-81.orig/qemu/pc-bios/README.gentoo kvm-81/qemu/pc-bios/README.gentoo
---- kvm-81.orig/qemu/pc-bios/README.gentoo	1969-12-31 19:00:00.000000000 -0500
-+++ kvm-81/qemu/pc-bios/README.gentoo	2008-12-16 10:08:19.000000000 -0500
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-82.orig/qemu/pc-bios/README.gentoo kvm-82/qemu/pc-bios/README.gentoo
+--- kvm-82.orig/qemu/pc-bios/README.gentoo	1969-12-31 19:00:00.000000000 -0500
++++ kvm-82/qemu/pc-bios/README.gentoo	2009-01-04 20:14:48.000000000 -0500
 @@ -0,0 +1,19 @@
 +- The PC BIOS comes from the Bochs project (http://bochs.sourceforge.net/)
 +  The bios.bin binary is provided for convenience.  If you want to rebuild
