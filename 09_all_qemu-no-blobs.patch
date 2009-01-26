@@ -1,6 +1,6 @@
-diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-82.orig/qemu/Makefile kvm-82/qemu/Makefile
---- kvm-82.orig/qemu/Makefile	2008-12-24 09:24:58.000000000 -0500
-+++ kvm-82/qemu/Makefile	2009-01-04 20:17:43.000000000 -0500
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-83.orig/qemu/Makefile kvm-83/qemu/Makefile
+--- kvm-83.orig/qemu/Makefile	2009-01-13 08:29:42.000000000 -0500
++++ kvm-83/qemu/Makefile	2009-01-26 14:22:38.000000000 -0500
 @@ -224,9 +224,9 @@ ar      de     en-us  fi  fr-be  hr     
  common  de-ch  es     fo  fr-ca  hu     ja  mk  nl-be      pt  sl     tr
  
@@ -22,12 +22,12 @@ diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-82.orig/qemu/Makefil
 -	$(datadir)/video.x \
 -	$(datadir)/openbios-sparc32 \
 -	$(datadir)/openbios-sparc64 \
-         $(datadir)/pxe-ne2k_pci.bin \
+ 	$(datadir)/pxe-ne2k_pci.bin \
  	$(datadir)/pxe-rtl8139.bin \
-         $(datadir)/pxe-pcnet.bin \
-diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-82.orig/qemu/pc-bios/README.gentoo kvm-82/qemu/pc-bios/README.gentoo
---- kvm-82.orig/qemu/pc-bios/README.gentoo	1969-12-31 19:00:00.000000000 -0500
-+++ kvm-82/qemu/pc-bios/README.gentoo	2009-01-04 20:14:48.000000000 -0500
+ 	$(datadir)/pxe-pcnet.bin \
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN kvm-83.orig/qemu/pc-bios/README.gentoo kvm-83/qemu/pc-bios/README.gentoo
+--- kvm-83.orig/qemu/pc-bios/README.gentoo	1969-12-31 19:00:00.000000000 -0500
++++ kvm-83/qemu/pc-bios/README.gentoo	2009-01-26 14:22:14.000000000 -0500
 @@ -0,0 +1,19 @@
 +- The PC BIOS comes from the Bochs project (http://bochs.sourceforge.net/)
 +  The bios.bin binary is provided for convenience.  If you want to rebuild
