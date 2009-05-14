@@ -1,0 +1,11 @@
+diff --exclude-from=/home/dang/.scripts/diffrc -up -ruN qemu-kvm-devel-85.orig/qemu-kvm-devel-85/qemu/qemu-options.hx qemu-kvm-devel-85/qemu-kvm-devel-85/qemu/qemu-options.hx
+--- qemu-kvm-devel-85.orig/qemu-kvm-devel-85/qemu/qemu-options.hx	2009-04-21 05:57:31.000000000 -0400
++++ qemu-kvm-devel-85/qemu-kvm-devel-85/qemu/qemu-options.hx	2009-05-14 10:12:57.000000000 -0400
+@@ -77,6 +77,7 @@ DEF("drive", HAS_ARG, QEMU_OPTION_drive,
+     "-drive [file=file][,if=type][,bus=n][,unit=m][,media=d][,index=i]\n"
+     "       [,cyls=c,heads=h,secs=s[,trans=t]][,snapshot=on|off]\n"
+     "       [,cache=writethrough|writeback|none][,format=f][,serial=s]\n"
++    "       [,boot=on|off]\n"
+     "                use 'file' as a drive image\n")
+ STEXI
+ @item -drive @var{option}[,@var{option}[,@var{option}[,...]]]
